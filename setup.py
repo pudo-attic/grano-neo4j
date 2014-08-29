@@ -26,7 +26,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'grano>=0.3.1',
-        'py2nei>=1.6.4'
+        'py2neo>=1.6.4'
     ],
     entry_points={
         'grano.startup': [

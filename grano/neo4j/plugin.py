@@ -4,13 +4,15 @@ from grano.interface import EntityChangeProcessor, ProjectChangeProcessor
 from grano.interface import SchemaChangeProcessor
 from grano.model import Project, Entity, Relation, Schema
 
+from grano.neo4j.engine import connect
+
 
 class Plugin(Startup, EntityChangeProcessor, ProjectChangeProcessor,
              RelationChangeProcessor, SchemaChangeProcessor):
 
     def configure(self, manager):
+        connect()
         #app.register_blueprint(interface.blueprint)
-        pass
 
     def entity_changed(self, entity_id, operation):
         if operation == 'delete':
